@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #798645;
+    background-size: cover;
+    gap:20px;
+}
+.head{
+    background-color: #1E201E;
+    height:40px;
+    width:100%;
+    
+}
+
+#board {
+    width: 540px;
+    height: 540px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: #F2EED7;
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 25px;
+    margin-top: 70px;;
+}
+
+#board div {
+    /* board = 540 x 540, divide into 3x3 tiles --> 180 x 180 per div */
+    width: 180px; 
+    height: 180px;
+    background-image: url("cave11.png");
+    background-size: cover;
+}
+
+#board div img {
+    /* all img tags inside tiles */
+    width: 100px;
+    height: 100px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+h1{
+    color:azure;
+}
+.arrow {
+    position: absolute;
+    top: -50px; /* Start above the screen */
+    left: 50%; /* Default horizontal position */
+    transform: translateX(-50%);
+    animation: fall 3s linear infinite; /* Falling animation */
+  }
+
+  .shaft {
+    position: relative;
+    width: 4px;
+    height: 100px;
+    background-color: brown;
+  }
+
+  .arrowhead {
+    position: absolute;
+    top: 0;
+    left: -6px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 12px solid black; /* Arrowhead */
+  }
+
+  .feathers {
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    width: 16px;
+    height: 8px;
+    background-color: darkred;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  }
+
+  @keyframes fall {
+    0% {
+      top: -50px;
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      top: 100vh; /* Fall to the bottom of the screen */
+      opacity: 0;
+    }
+  }
+
+  /* Mobile-first approach */
+@media screen and (max-width: 600px) {
+  #board {
+      width: 100%; /* Full width on smaller screens */
+      height: auto; /* Maintain aspect ratio */
+  }
+
+  #board div {
+      width: 33.33%; /* Tiles are stacked 3 per row on small screens */
+      height: auto;
+      padding-top: 33.33%; /* Maintain square aspect ratio */
+  }
+
+  .arrow {
+      font-size: 0.8em; /* Adjust arrow size for smaller screens */
+  }
+
+  .shaft {
+      height: 80px; /* Shorter shaft for smaller screens */
+  }
+
+  .arrowhead {
+      border-top: 10px solid black; /* Smaller arrowhead */
+  }
+
+  .feathers {
+      height: 6px; /* Smaller feathers */
+  }
+}
+
+/* Tablet and larger screens */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  #board {
+      width: 80%; /* Make the board a little smaller */
+      height: auto; /* Keep aspect ratio */
+  }
+
+  #board div {
+      width: 33.33%; /* Maintain 3 per row */
+      height: auto;
+      padding-top: 33.33%; /* Maintain square aspect ratio */
+  }
+}
+
+/* Desktop and larger screens */
+@media screen and (min-width: 1025px) {
+  #board {
+      width: 540px; /* Set to original size */
+      height: 540px; /* Original height */
+  }
+
+  #board div {
+      width: 180px; /* Keep original tile width */
+      height: 180px; /* Keep original tile height */
+  }
+}

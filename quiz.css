@@ -1,0 +1,233 @@
+
+body {
+    overflow: hidden;
+  }
+.top{
+    width:100%;
+    height:70px;
+    background-color: black; 
+    color:azure;
+    font-size: 65px;
+    font-family: monospace;
+    text-align: center;
+}
+.body1{
+    background-color: #FBF5DD;
+    width:100%;
+    height:200px;
+    display:flex;
+    align-items:center;
+    justify-content:space-evenly; 
+    position:fixed; 
+    display:flex;
+    align-items:center;
+    justify-content:space-evenly; 
+}
+.body2{
+    background-color: #A6CDC6;
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    gap:0px;
+    
+  
+}
+.circle{
+    height:250px;
+    width:250px;
+    margin-top:160px;
+    border-radius: 50%;
+    background-color: #16404D;
+    color:white;
+    font-size: 250px;
+    text-align: center;
+}
+.img1{
+    height:140px;
+    width:140px;
+    background-image:url("rama.jpg");
+    background-size:cover;
+    transform: rotate(45deg); /* Rotate by 45 degrees */
+            
+}
+.img1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit; /* Use the same background image */
+    background-size: inherit;
+    background-position: inherit;
+    transform: rotate(-45deg); /* Counter-rotate the background */
+}
+.img2{
+    height:140px;
+    width:140px;
+    background-image:url("HH.jpg");
+    background-size:cover;
+    transform: rotate(45deg); 
+}
+.img1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit; /* Use the same background image */
+    background-size: inherit;
+    background-position: inherit;
+    transform: rotate(-45deg); /* Counter-rotate the background */
+}
+.img3{
+    height:140px;
+    width:140px;
+    background-image:url("SITAJI.jpg");
+    background-size:cover;
+    transform: rotate(45deg); 
+}
+.img2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit; /* Use the same background image */
+    background-size: inherit;
+    background-position: inherit;
+    transform: rotate(-45deg); /* Counter-rotate the background */
+}
+.img4{
+    height:140px;
+    width:140px;
+    background-image:url("RAVANA.jpg");
+    background-size:cover;
+    transform: rotate(45deg); 
+}
+.img3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit; /* Use the same background image */
+    background-size: inherit;
+    background-position: inherit;
+    transform: rotate(-45deg); /* Counter-rotate the background */
+}
+.img4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit; /* Use the same background image */
+    background-size: inherit;
+    background-position: inherit;
+    transform: rotate(-45deg); /* Counter-rotate the background */
+}
+.app{
+    background:#fff;
+    width:90%;
+    max-width:600px;
+    margin:190px auto 0;
+    border-radius:10px;
+    padding:30px;
+}
+.app h3{
+    font-weight:25px;
+    font-weight: 40px;;
+    color:brown;
+    border-bottom: 1px solid #333;
+    padding-bottom:10px;
+
+}
+.quiz{
+    padding:15px 0;
+}
+.quiz h4{
+    font-size:18px;
+    color:#333;
+    font-weight:600;
+}
+.btn{
+    background:#16404D;
+    color:azure;
+    font-weight: 500;
+    width:100%;
+    border:1px solid ;
+    padding:10px;
+    margin: 10px 0;
+    text-align:left;
+    cursor:pointer;
+}
+.btn:hover:not([disabled]){
+    background-color:#fff;
+    color: #222;
+}
+.btn:disabled{
+    cursor: no-drop;
+}
+#next-btn{
+    background: #001e4d;
+    color:#fff;
+    font-weight:500;
+    width:150px;
+    border:0;
+    padding:10px;
+    margin:20px auto 0;
+    border-radius:4px;
+    cursor:pointer;
+    display:none;
+}
+.correct{
+    background:#9aeabc;
+}
+.incorrect{
+    background:#ff9393;
+}
+/* ✅ Responsive for Tablets & Small Screens */
+@media screen and (max-width: 768px) {
+    .body1 {
+        flex-wrap: nowrap; /* Ensure images stay in one line */
+        gap: 5px; /* Reduce spacing */
+    }
+
+    .img1, .img2, .img3, .img4 {
+        width: 80px;  /* Reduce size */
+        height: 80px;
+    }
+
+    .circle {
+        width: 100px; 
+        height: 100px; 
+        font-size: 80px;
+    }
+}
+
+/* ✅ Responsive for Mobile (Extra Small Screens) */
+@media screen and (max-width: 480px) {
+    .body1 {
+        flex-wrap: nowrap; /* Keep images in one row */
+        justify-content: center;
+        gap: 3px;
+    }
+
+    .img1, .img2, .img3, .img4 {
+        width: 60px; /* Further reduce size */
+        height: 60px;
+    }
+
+    .circle {
+        width: 80px;
+        height: 80px;
+        font-size: 60px;
+    }
+}
+
