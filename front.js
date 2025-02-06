@@ -1,5 +1,34 @@
 const images=document.querySelectorAll('.image-gallery img');
 let currentIndex=0;
+document.addEventListener("DOMContentLoaded", function () {
+    var fluteSound = document.getElementById("fluteSound");
+    var playButton = document.getElementById("playAudio");
+
+    // Function to autoplay audio
+    function tryToPlayAudio() {
+        fluteSound.play().then(() => {
+            console.log("Autoplay successful 🎶");
+            playButton.textContent = "Stop Flute Music ⏹️"; // Change button to stop
+        }).catch(error => {
+            console.log("Autoplay blocked 🚫");
+        });
+    }
+
+    // Try autoplay on page load
+    tryToPlayAudio();
+
+    // Toggle Play/Pause on Button Click
+    playButton.addEventListener("click", function () {
+        if (fluteSound.paused) {
+            fluteSound.play();
+            playButton.textContent = "Stop Flute Music ⏹️"; // Change button text
+        } else {
+            fluteSound.pause();
+            fluteSound.currentTime = 0; // Reset audio to start
+            playButton.textContent = "Play Flute Music 🎶"; // Change button text
+        }
+    });
+});
 
 function display(){
     images[currentIndex].classList.remove('active');
