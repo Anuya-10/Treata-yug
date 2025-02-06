@@ -1,0 +1,262 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body & Background */
+body {
+    font-family:'Times New Roman', Times, serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Heading Styles */
+.heading {
+    background-color: #2d3e50;
+    color: #fff;
+    text-align: center;
+    padding: 10px 10px;
+    height: 7rem ;
+}
+
+.heading h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Slider Styles */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slides img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+/* Reviews Section */
+#reviews-section {
+    padding: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Reviews Display Area */
+#reviews-display {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Space between each review box */
+}
+
+/* Each Review Box */
+.review {
+    background-color: wheat;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Hover effect for review boxes */
+.review:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    height: auto;
+}
+.review:hover p {
+    height: auto; /* Allow the text to expand fully when hovered */
+}
+/* Review text styling */
+.review p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: 500;
+    height: 100px; /* Fixed height for text */
+    overflow: hidden;
+    transition: height 0.3s ease;}
+
+/* Delete Button Styling */
+.review .delete-review {
+    background-color:#555;
+    color: white;
+    padding: 6px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.review .delete-review:hover {
+    background-color: #c0392b;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.5s ease;
+}
+
+/* Close Button (X) */
+.close-btn {
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    cursor: pointer;
+}
+
+/* Review Form Styles */
+#review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#review-content {
+    padding: 20px;
+    font-size: 1.1rem;
+    color: #333;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+    min-height: 150px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fafafa;
+}
+
+#review-content:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+}
+
+/* Submit Button in Modal */
+button[type="submit"] {
+    padding: 15px 25px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+button[type="submit"]:focus {
+    outline: none;
+}
+
+/* Review Button (opens the modal) */
+#open-review-modal {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+#open-review-modal:hover {
+    background-color: #2980b9;
+}
+
+#open-review-modal:focus {
+    outline: none;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+    #reviews-display {
+        grid-template-columns: 1fr; /* One column layout for small screens */
+    }
+}
+
+
+/* Animation for Modal Fade-In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
