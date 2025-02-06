@@ -1,0 +1,160 @@
+body{
+    background-color:#09122C;
+}
+.first{
+    background-color:#A35C7A ;
+    height:30px;
+    width:100%;
+    
+
+}
+.sec{
+    background-color:#212121 ;
+    height:70px;
+    width:100%;
+    font-size:40px;
+    font-weight:700;
+    color: white;
+    border:2px solid black;
+    letter-spacing:2px;;
+    text-shadow:2px 2px black;
+    text-align:center;
+    padding-top:30px;
+   
+
+
+}
+
+.second{
+    display:flex;
+    background-color:#F6C794;
+    box-shadow:0px 0px 3px black;
+    border:4px solid black;
+   
+
+}
+img {
+    margin-top:10px;
+    width:120px;
+    height:65px;
+}
+div .stwo{
+    margin-top:22px;
+    font-size:25px;
+    font-weight:600;
+    text-shadow:1px 1px brown;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+#progressBarContainer{
+   margin-top:30px;
+    width: 80%; 
+    border:2px solid black;
+    background-color: #e0e0e0;
+    height: 20px;
+    border-radius: 10px;  
+}
+#progressBar{
+   
+    width: 0%;
+    height: 20px; 
+    border-radius: 10px;  
+    background-color: #4caf50; 
+    border-radius:5px;
+   
+}
+#dabba{
+    width:80px;
+    height:80px;
+    border:2px solid black;
+    background-color:lavenderblush
+}
+p{ font-style: normal;
+    font-weight: 400;
+        padding-top:2px;
+    margin-left:2px;
+}
+
+span{
+    border:2px solid black;
+}
+
+div .sfour{
+    width:400px;
+}
+input{
+    margin-top:9px;
+    border-color:grey;
+    box-shadow:0px 0px 2px 2px grey;
+    border-radius: 30px;
+    padding-top:6px;
+    width:600px;
+    height:45px;
+    font-size:17px;
+}
+input::placeholder{
+    font-size:17px;
+    color:slategrey
+    
+}
+div .sfive{
+    width:60px;
+}
+.third{
+ display:grid;
+ width:100%;
+ height:2200px;
+ grid-template-columns:1fr 1fr 1fr 1fr;
+ grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr;
+ gap:5px;
+ font-size:25px;
+}
+.thir{
+    background-color: white;
+    margin:0;
+    padding:0;
+    border-radius:10px;
+    
+
+}
+video{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    padding-top:0px;
+    
+}
+.textscroll{
+    display:flex;
+    width:100%;
+    height:55px;
+    margin:3px;
+    color:red;
+    background-color:#FFFDEC;
+    font-size:20px;
+    font-weight:600;
+    text-shadow:2px 2px  white;  
+    overflow:hidden;
+    position:relative;
+  
+}
+.textscroll span{
+    position:absolute;
+    
+    display:inline-block;
+    
+    animation:scrollText 3s linear infinite;
+}
+@keyframes scrollText{
+    from{
+        transform:translateX(100%);
+    }
+    to{
+        transform:translateX(-100%);
+    }
+}
+.highlight{
+    border:5px solid silver;
+    box-shadow:0 0 20px silver;
+    transition:all 0.3s ease-in-out;
+}
