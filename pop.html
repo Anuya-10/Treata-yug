@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>front</title>
+    <link rel="stylesheet" href="pop.css">
+    <script>
+        // Redirect after 10 seconds (10000 milliseconds)
+        setTimeout(function() {
+            window.location.href = "sign1.html"; // Change to your main page's URL
+        }, 8000);
+    </script>
+</head>
+<body>
+      <div class="container">
+        <div class="circle"></div>
+        <div class="box1" id="box1"></div>
+        <div class="box2" id="box2"></div>
+      </div>
+      <script>
+        // Wait for 4 seconds (duration of popUp and fadeOut animations combined) to show the two divs
+        setTimeout(function() {
+            document.getElementById('box1').style.opacity = 1; // Left corner
+            document.getElementById('box2').style.opacity = 1; // Right corner
+        }, 4000); // 2s (popUp) + 2s (fadeOut) = 4s
+      </script>
+    
+</body>
+</html>
