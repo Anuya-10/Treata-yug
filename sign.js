@@ -24,7 +24,7 @@ document.querySelector(".sign").addEventListener("click", async () => {
     }
     console.log("Sign In details submitted");
     try {
-        const response = await fetch("http://localhost:3001/signin", {
+        const response = await fetch("http://127.0.0.1:3001/signin", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
