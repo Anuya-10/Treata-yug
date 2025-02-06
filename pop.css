@@ -4,7 +4,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #DDA853;
+    background-color: coral;
 }
   
 /* Container to hold the circle */
