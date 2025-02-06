@@ -5,6 +5,10 @@
 body{
     background-color: #FFECC8;
 }
+.dio{
+    height:20px;
+    padding-top:20px
+}
 .first{
     background-image:url(one.png);
     background-size:cover;
