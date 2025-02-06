@@ -1,179 +1,258 @@
-*{
-    margin:0;
-    padding:0;
+/* Default styles for larger screens */
+* {
+    margin: 0;
+    padding: 0;
 }
-body{
+body {
     background-color: #FFECC8;
 }
-.dio{
-    height:20px;
-    padding-top:20px
+.dio {
+    height: 20px;
+    padding-top: 20px;
 }
-.first{
-    background-image:url(one.png);
-    background-size:cover;
-    font-size:20px;
-    padding-top:20px;
-    padding-bottom:20px;
-    font-weight:800;
-    border-top:2px solid black;
-    
-    text-shadow:1px 1px rgb(174, 238, 250);
-    font-family:Arial, Helvetica, sans-serif;
-    text-align:center;
-    letter-spacing:2px;
+.first {
+    background-image: url(one.png);
+    background-size: cover;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 800;
+    border-top: 2px solid black;
+    text-shadow: 1px 1px rgb(174, 238, 250);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
 }
-
-.second{
-    display:flex;
-    background-color:white;
-    border:2px solid black;
-
-
+.second {
+    display: flex;
+    background-color: white;
+    border: 2px solid black;
 }
 img {
-    margin-top:10px;
-    width:120px;
-    height:65px;
-
+    margin-top: 10px;
+    width: 120px;
+    height: 65px;
 }
-div .stwo{
-    margin-top:22px;
-    font-size:25px;
-    font-weight:600;
-    text-shadow:1px 1px brown;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+div .stwo {
+    margin-top: 22px;
+    font-size: 25px;
+    font-weight: 600;
+    text-shadow: 1px 1px brown;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-div .sfour{
-    width:400px;
+div .sfour {
+    width: 400px;
 }
-input{
-    margin-top:9px;
+input {
+    margin-top: 9px;
     border-color: black;
     border-radius: 30px;
-    padding-top:6px;
-    width:500px;
-    height:45px;
+    padding-top: 6px;
+    width: 500px;
+    height: 45px;
 }
-input::placeholder{
-    font-size:17px;
-    color:slategrey
+input::placeholder {
+    font-size: 17px;
+    color: slategrey;
 }
-div .sfive{
-    width:60px;
+div .sfive {
+    width: 60px;
 }
-.sign{
-    width:80px;
-    height:35px;
-    border-radius:10px;
+.sign {
+    width: 80px;
+    height: 35px;
+    border-radius: 10px;
     background-color: cornflowerblue;
     color: black;
-    font-size:20px;
+    font-size: 20px;
 }
-.third{
-    display:flex;
-    height:50px;
-    background-color:lightseagreen;
-    color:darkblue;
-    text-shadow:2px 2px white;
-    cursor:pointer;
+.third {
+    display: flex;
+    height: 50px;
+    background-color: lightseagreen;
+    color: darkblue;
+    text-shadow: 2px 2px white;
+    cursor: pointer;
 }
-.thir{
-    width:300px;
-    font-size:20px;
-    letter-spacing:1px;
-    text-shadow:1px white;
-    padding-top:10px;
-    padding-bottom:15px;
-    padding-left:50px;
-    font-weight:bold;
-    font-family:Georgia, 'Times New Roman', Times, serif
+.thir {
+    width: 300px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-shadow: 1px white;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.ssix{
+.ssix {
     align-items: flex-end;
-    margin-top:20px;
-    margin-right:0;
+    margin-top: 20px;
+    margin-right: 0;
     float: right;
-    padding-left:150px;
+    padding-left: 150px;
 }
-button{
-    border:2px;
-    background-color:snow;
+button {
+    border: 2px;
+    background-color: snow;
 }
-.text{
-    box-shadow:5px 4px 10px rgba(255, 0, 0, 0.2);
-    border:2px solid black;
+.text {
+    box-shadow: 5px 4px 10px rgba(255, 0, 0, 0.2);
+    border: 2px solid black;
 }
-.textscroll{
-    display:flex;
-    width:100%;
-    height:55px;
-    
-    color:red;
-    background-color:#FFFDEC;
-    font-size:20px;
-    font-weight:600;
-    text-shadow:2px 2px  white;  
-    overflow:hidden;
-    position:relative;
-    padding-top:13px
+.textscroll {
+    display: flex;
+    width: 100%;
+    height: 55px;
+    color: red;
+    background-color: #FFFDEC;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 2px 2px white;
+    overflow: hidden;
+    position: relative;
+    padding-top: 13px;
 }
-.textscroll span{
-    position:absolute;
-    display:inline-block;
-    white-space:nowrap;
-    animation:scrollText 10s linear infinite;
+.textscroll span {
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollText 10s linear infinite;
 }
-@keyframes scrollText{
-    from{
-        transform:translateX(100%);
+@keyframes scrollText {
+    from {
+        transform: translateX(100%);
     }
-    to{
-        transform:translateX(-100%);
+    to {
+        transform: translateX(-100%);
     }
 }
 .image-gallery {
-
-    margin-top:100px;
+    margin-top: 100px;
     width: 1000px;
-    height:500px;
-    overflow:hidden;
-    background-image:url('div2.png');
+    height: 500px;
+    overflow: hidden;
+    background-image: url('div2.png');
     overflow: hidden;
     position: relative;
-    border-radius:10px;
-    box-shadow:0px 0px 30px 30px rgb(20, 2, 33);
-  }
-  .scroll{
-    position:relative;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 30px rgb(20, 2, 33);
+}
+.scroll {
+    position: relative;
     background-size: contain;
-    background-repeat:no-repeat;
-    background-position:center;
-    width:100%;
-    height:100%;
-
-  }
-  .scroll img {
-    
-    opacity:0;
-    width:100%;
-    height:100%;
-    border-radius:5px;
-    object-fit:contain;
-    background-size:cover;
-    position:absolute;
-    top:0;
-    left:0;
-    
-    position:absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+.scroll img {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    position: absolute;
     transition: opacity 1s ease-in-out;
-    
-  }
-  .scroll img.active{
-    display:block;
-    opacity:1;
-  }
-  
-  
+}
+.scroll img.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 1200px) {
+    .second {
+        flex-direction: column;
+    }
+
+    .first {
+        font-size: 18px;
+    }
+
+    .sfour {
+        width: 80%;
+    }
+
+    input {
+        width: 80%;
+    }
+
+    .sign {
+        width: 70%;
+    }
+
+    .third {
+        height: 40px;
+    }
+
+    .thir {
+        width: 80%;
+        font-size: 18px;
+    }
+
+    .image-gallery {
+        width: 90%;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .first {
+        font-size: 16px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .sfour, .sfive {
+        width: 100%;
+    }
+
+    .sign {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .third {
+        height: 40px;
+        flex-direction: column;
+    }
+
+    .thir {
+        font-size: 16px;
+        padding-left: 0;
+    }
+
+    .image-gallery {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .first {
+        font-size: 14px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .second {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .textscroll {
+        font-size: 16px;
+        height: 45px;
+    }
+
+    .scroll {
+        height: 200px;
+    }
+}
