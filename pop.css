@@ -1,0 +1,92 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DDA853;
+}
+  
+/* Container to hold the circle */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap:0;
+    position: relative; /* Allow absolute positioning of the boxes */
+}
+
+/* Circle styling */
+.circle {
+    width: 600px;
+    height: 600px;
+    background-image: url("treta\ copy.png");
+    background-size: cover;
+    border-radius: 50%;
+    animation: popUp 2s ease-out forwards, fadeOut 2s 2s forwards; /* Adding fadeOut after popUp */
+    position: absolute; /* Center the circle */
+}
+
+/* Box styling */
+.box1 {
+    width: 400px;
+    height: 700px;
+    
+    opacity: 0; /* Initially hidden */
+    transition: opacity 2s ease-out;
+    position: absolute; /* Position boxes independently */
+}
+.box2 {
+    margin-top: 80px;
+    width: 300px;
+    height: 500px;
+    gap:1px;
+    
+    opacity: 0; /* Initially hidden */
+    transition: opacity 2s ease-out;
+    position: absolute; /* Position boxes independently */
+}
+
+/* Positioning box1 at top-left corner */
+#box1 {
+    top: 20px;
+    left: 20px;
+    
+    background-image: url("ramji1popup1.png");
+    background-size: cover;
+}
+
+/* Positioning box2 at top-right corner */
+#box2 {
+    top: 20px;
+    right: 20px;
+    background-image: url("sitajipopup11.png");
+    
+    background-size:cover;
+
+}
+
+/* PopUp animation */
+@keyframes popUp {
+    0% {
+        transform: scale(0); /* Start small */
+        opacity: 0; /* Initially hidden */
+    }
+    100% {
+        transform: scale(1); /* End at normal size */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* FadeOut animation */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0); /* Shrink the circle */
+    }
+}
