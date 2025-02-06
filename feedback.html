@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEEDBACK</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <div class="block1">
+        <div class="blockin1">
+            <h1 class="heading">FEEDBACK FORM</h1>
+            <h2 class="give">SHARE YOUR EXPERIENCE WITH US.</h2>
+        </div>
+    </div>
+    <div class="block2">
+        <div class="blockin2">
+            <h1 class="feedbk">HOW WAS YOUR EXPERIENCE?</h1>
+            <div class="expression">
+                <div class="happy"></div>
+                <div class="smile"></div>
+                <div class="sad"></div> 
+            </div>
+            <div class="enter">
+                <input type="text" class="feed" id="feedbackInput" placeholder="give your feedback">
+            </div>
+            <div class="container">
+            <button class="end" onclick="submitFeedback()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <script src="feedback.js"></script>
+    <script src="feedserver.js"></script>
+</body>
+</html>
