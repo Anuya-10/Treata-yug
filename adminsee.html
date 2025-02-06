@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input { padding: 10px; margin: 10px; }
+        button { padding: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Admin Panel Login</h2>
+    <input type="password" id="password" placeholder="Enter Admin Password">
+    <button onclick="checkPassword()">Login</button>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            if (password === "RamayanaSecret123") {  // Change this to a stronger password
+                localStorage.setItem("adminAccess", "granted");
+                window.location.href = "admin.html";  // Redirect to admin panel
+            } else {
+                alert("Incorrect password!");
+            }
+        }
+
+    </script>
+</body>
+</html>
