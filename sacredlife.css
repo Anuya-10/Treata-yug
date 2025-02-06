@@ -1,0 +1,1131 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+  
+    background-image: url("mpp2.jpg");
+    background-size: cover;
+}
+
+
+.navebar{
+    width:1700px;
+    height:70px;
+    background-color: black;
+    color:azure;
+
+}
+h1{
+    text-align: center;
+    justify-content: center;
+    font-size: 50px;
+    
+}
+.btn1 {
+    position: absolute;
+    top: 69%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn1:hover {
+    background-color:black;
+    color:azure;
+}
+
+.diagonal-line1 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 110px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 74%;
+    left: 80%;
+    transform: rotate(30deg); /* Adjust the angle as needed */
+  }
+.btn2 {
+    position: absolute;
+    top: 79%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn2:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line2 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 110px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 83%;
+    left: 80%;
+    transform: rotate(-30deg); /* Adjust the angle as needed */
+  }
+
+.btn3 {
+    position: absolute;
+    top: 89%;
+    left: 79%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn3:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line3 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 54px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 91%;
+    left: 80%;
+    transform: rotate(30deg); /* Adjust the angle as needed */
+  }
+
+.btn4 {
+    position: absolute;
+    top: 94%;
+    left: 83%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn4:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line4 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 273px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 108%;
+    left: 69%;
+    transform: rotate(-42deg); /* Adjust the angle as needed */
+  }
+.btn5 {
+    position: absolute;
+    top: 120%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn5:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line5 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 220px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 128%;
+    left: 59%;
+    transform: rotate(-25deg); /* Adjust the angle as needed */
+  }
+.btn6 {
+    position: absolute;
+    top: 135%;
+    left: 56%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn6:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line6 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 50px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 137%;
+    left: 56%;
+    transform: rotate(-30deg); /* Adjust the angle as needed */
+  }
+.btn7 {
+    position: absolute;
+    top: 140%;
+    left: 56%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+.diagonal-line7 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 200px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 145%;
+    left: 56%;
+    transform: rotate(16deg); /* Adjust the angle as needed */
+  }
+
+.btn7:hover {
+    background-color:black;
+    color:azure;
+}
+.btn8 {
+    position: absolute;
+    top: 150%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn8:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line8 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 140px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 156%;
+    left: 62%;
+    transform: rotate(-30deg); /* Adjust the angle as needed */
+  }
+.btn9 {
+    position: absolute;
+    top: 162%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn9:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line9 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 55px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 163%;
+    left: 67%;
+    transform: rotate(10deg); /* Adjust the angle as needed */
+  }
+.btn10 {
+    position: absolute;
+    top: 164%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn10:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line10 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 55px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 166%;
+    left: 67%;
+    transform: rotate(-12deg); /* Adjust the angle as needed */
+  }
+.btn11 {
+    position: absolute;
+    top: 167%;
+    left: 68%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn11:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line11 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 64px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 169%;
+    left: 68%;
+    transform: rotate(12deg); /* Adjust the angle as needed */
+  }
+.btn12 {
+    position: absolute;
+    top: 172%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn12:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line12 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 165px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 182%;
+    left: 65%;
+    transform: rotate(-60deg); /* Adjust the angle as needed */
+  }
+.btn13 {
+    position: absolute;
+    top: 194%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn13:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line13 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 64px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 196%;
+    left: 68%;
+    transform: rotate(12deg); /* Adjust the angle as needed */
+  }
+.btn14 {
+    position: absolute;
+    top: 199%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn14:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line14 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 64px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 201%;
+    left: 73%;
+    transform: rotate(12deg); /* Adjust the angle as needed */
+  }
+.btn15 {
+    position: absolute;
+    top: 204%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn15:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line15 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 7px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 205%;
+    left: 76%;
+    transform: rotate(12deg); /* Adjust the angle as needed */
+  }
+.btn16 {
+    position: absolute;
+    top: 206%;
+    left: 78%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn16:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line16 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 81px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 211%;
+    left: 76%;
+    transform: rotate(42deg); /* Adjust the angle as needed */
+  }
+.btn17 {
+    position: absolute;
+    top: 216%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn17:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line17 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 15px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 217%;
+    left: 79%;
+    transform: rotate(-24deg); /* Adjust the angle as needed */
+  }
+.btn18 {
+    position: absolute;
+    top: 219%;
+    left: 79%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn18:hover {
+    background-color:black;
+    color:azure;
+}
+.diagonal-line18 {
+    position: absolute;
+    border-top: 2px dotted black;
+    width: 54px; /* Adjust based on button distance */
+    height: 5px;
+    background-color: skyblue;
+    top: 216%;
+    left: 82%;
+    transform: rotate(-35deg); /* Adjust the angle as needed */
+  }
+
+
+.btn19 {
+    position: absolute;
+    top: 213%;
+    left: 84%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 100;
+   background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition:  0.3s ease;
+    padding: 15px 30px;
+    
+}
+
+.btn19:hover {
+    background-color:black;
+    color:azure;
+}
+
+.popup-container {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px;
+    font-size: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.popup1 {
+    width: 700px;
+    height: 600px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    
+
+  
+}
+.con1{
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+   
+
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.popup2 {
+   
+    width: 700px;
+    height: 600px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+   
+
+  
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.con2{
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+   
+
+}
+.popup3 {
+    width: 700px;
+    height: 700px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+   color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+.con3{
+    
+        font-size: 25px;
+        line-height: 1.8; 
+        color: black;
+        animation: fadeIn 2s ease-in-out;
+}
+       
+    
+   
+.popup4 {
+    width: 700px;
+    height: 750px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con4{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup5 {
+    width: 700px;
+    height: 750px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con5{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup6 {
+    width: 700px;
+    height: 750px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con6{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup7 {
+    width: 700px;
+    height: 750px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con7{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup8 {
+    width: 700px;
+    height: 750px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con8{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup9{
+    width: 700px;
+    height: 550px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con9{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup10 {
+    width: 700px;
+    height: 550px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con10{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup11 {
+    width: 700px;
+    height: 750px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con11{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup12 {
+    width: 700px;
+    height: 650px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con12{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup13 {
+    width: 700px;
+    height: 750px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con13{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup14 {
+    width: 700px;
+    height: 750px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con14{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup15 {
+    width: 700px;
+    height: 750px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top:10px;
+  
+    
+
+  
+}
+.con15{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup16 {
+    width: 700px;
+    height: 780px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con16{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup17 {
+    width: 700px;
+    height: 750px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con17{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup18 {
+    width: 700px;
+    height: 780px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con18{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup19 {
+    width: 700px;
+    height: 750px;
+    background-color: #FFCF9D;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    text-align: center;
+    color:white;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+    
+
+  
+}
+.con19{
+    
+    font-size: 25px;
+    line-height: 1.8; 
+    color: black;
+    animation: fadeIn 2s ease-in-out;
+}
+.popup-container {
+    display: none;
+}
