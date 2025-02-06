@@ -29,44 +29,7 @@ body, html {
     position: absolute; /* Center the circle */
 }
 
-/* Box styling */
-.box1 {
-    width: 400px;
-    height: 700px;
-    
-    opacity: 0; /* Initially hidden */
-    transition: opacity 2s ease-out;
-    position: absolute; /* Position boxes independently */
-}
-.box2 {
-    margin-top: 80px;
-    width: 300px;
-    height: 500px;
-    gap:1px;
-    
-    opacity: 0; /* Initially hidden */
-    transition: opacity 2s ease-out;
-    position: absolute; /* Position boxes independently */
-}
 
-/* Positioning box1 at top-left corner */
-#box1 {
-    top: 20px;
-    left: 20px;
-    
-    background-image: url("ramji1popup1.png");
-    background-size: cover;
-}
-
-/* Positioning box2 at top-right corner */
-#box2 {
-    top: 20px;
-    right: 20px;
-    background-image: url("sitajipopup11.png");
-    
-    background-size:cover;
-
-}
 
 /* PopUp animation */
 @keyframes popUp {
