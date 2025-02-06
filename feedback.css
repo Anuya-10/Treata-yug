@@ -1,0 +1,125 @@
+body{
+    background-color:#146C94;
+}
+.block1{
+    width:100%;
+    height:200px;
+    background-color: #FBFBFB;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.block2{
+    width:100%;
+    height:600px;
+    background-color: #146C94;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+}
+.blockin1{
+    width:700px;
+    height:300px;
+    background-color:#146C94;
+    margin-top: 180px;
+}
+.blockin2{
+    width:700px;
+    height:482px;
+    background-color: #FBFBFB;
+    margin-bottom: 100px;
+}
+.heading{
+    font-size: 50px;
+    text-align: center;
+    color: #FBFBFB;
+
+}
+.give{
+    font-family: monospace;
+    text-align: center;
+    font-size: 30px;
+    font-weight: lighter;
+    color: #FBFBFB;
+}
+.feedbk{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: lighter;
+    font-style: inherit;
+}
+.expression{
+    height:50px;
+    width:50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+.expression{
+    height:100px;
+    width:300px;
+    display:flex;
+    justify-content: left;
+}
+
+.smile{
+    height:100px;
+    width:130px;
+    background-image: url("smile.jpg");
+    background-size: cover;
+}
+
+.sad{
+    height:110px;
+    width:120px;
+    background-image: url("sad1.png");
+    background-size: cover;
+}
+.happy{
+    height:110px;
+    width:100px;
+    background-image: url("happy1.webp");
+    background-size: cover;
+}
+.feed{
+    width:100%;
+    height:200px;
+    border:3px solid grey;
+    font-size:10px;
+}
+input::placeholder{
+    color:black;
+    font-size:10px;
+
+}
+.enter{
+    width:700px;
+    height:250px;
+    background-color: azure;
+    font-size: 40px;
+    opacity: 0.3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.end{
+    align-items: right;
+    justify-content: center;
+    height:50px;
+    width:100px;
+    color:black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    
+}
+.end:hover{
+    transform: scale(1.2);
+}
+.container {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+
+}
