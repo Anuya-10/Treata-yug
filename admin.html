@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Feedback</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        h1 { color: #333; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #f4f4f4; margin: 10px; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>User Feedback</h1>
+    <ul id="feedbackList"></ul>
+
+    <script>
+        async function fetchFeedback() {
+            try {
+                const response = await fetch("http://localhost:5001/get-feedbacks");
+                const feedbacks = await response.json();
+                
+                const feedbackList = document.getElementById("feedbackList");
+                feedbackList.innerHTML = ""; // Clear previous list
+
+                feedbacks.forEach(item => {
+                    const li = document.createElement("li");
+                    li.textContent = item.text;
+                    feedbackList.appendChild(li);
+                });
+            } catch (error) {
+                console.error("Error fetching feedback:", error);
+            }
+        }
+
+        fetchFeedback(); // Fetch feedback when page loads
+        if (localStorage.getItem("adminAccess") !== "granted") {
+    window.location.href = "admin.html";  // Redirect to login if not authenticated
+}
+
+    </script>
+</body>
+</html>
+
