@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPLORE LEARNING</title>
+    <link rel="stylesheet" href="learnpage.css">
+</head>
+<body>
+    <div class="header1">
+        <div class="phone"></div>
+        <div class="num">1800-2355-3456</div>
+    </div>
+    <div class="header2">
+        <div class="logo"></div>
+        <div class="heading">WELCOME TO LEARNING ZONE</div>
+        <div class="icons">
+            <div class="shopping"></div>
+            <div class="pinterest"></div>
+            <div class="instagram"></div>
+            <div class="twitter"></div>           
+        </div>
+        <div class="end">BACK</div>
+    </div>
+    <div class="body1">
+        <div class="img1"></div>
+        <div class="img2"></div>
+        <div class="img3"></div>
+        <div class="img4"></div>
+    </div>
+    <div class="body2">
+        <div class="learn">
+            
+            <div class="im1"></div>
+            <div class="head1">LEARNING</div>
+            <div class="content1">"This column provides you with insightful knowledge and profound learning about the timeless epic, the Ramayan, exploring its rich narratives, moral teachings, cultural significance, and enduring relevance in today's world."
+            </div>
+        </div>
+        <div class="quiz" >
+            <div class="im2"></div>
+            <div class="head2">QUIZ</div>
+            <div class="content2">It offers engaging questions that delve into the intricate stories, characters, moral lessons, and cultural values depicted in this timeless epic, making the learning experience both interactive and enriching."</div>
+        </div>
+    </div>
+    <script>
+        document.querySelector(".quiz").addEventListener("click", ()=>{
+            window.location.href="quiz.html";
+        })
+        document.querySelector(".learn").addEventListener("click", ()=>{
+            window.location.href="explore.html";
+        })
+        document.querySelector('.instagram').addEventListener('click', function() {
+            window.open('https://www.instagram.com/ramayana.anime/');
+          });
+          document.querySelector('.shopping').addEventListener('click', function() {
+            window.open('https://www.amazon.in/s?k=ramayan+books&crid=3RPDULO6ZTTYG&sprefix=ramayan+books%2Caps%2C319&ref=nb_sb_ss_ts-doa-p_1_13');
+          });
+
+          document.querySelector('.pinterest').addEventListener('click', function() {
+            window.open('    https://in.pinterest.com/search/pins/?rs=ac&len=2&q=ramayana%20images&eq=ramayan%20images&etslf=6851');
+          });
+          document.querySelector('.twitter').addEventListener('click', function() {
+            window.open('https://x.com/RamayanaAnime');
+          });
+        
+    </script>
+</body>
+</html>
