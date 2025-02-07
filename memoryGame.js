@@ -136,5 +136,9 @@ for(let i=0; i<shuffledChild.length; i++){
     childDiv.appendChild(front_div)
     childDiv.appendChild(back_div)
 }
-
+const audio = new Audio("aasma_ko_chukar_dekho.mp3");
+audio.muted = true; // Start muted
+audio.play().then(() => {
+    audio.muted = false; // Unmute after autoplay starts
+}).catch(e => console.error("Autoplay failed:", e));
 
