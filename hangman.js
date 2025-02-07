@@ -99,3 +99,9 @@ const wordList = [
   
   getRandomWord();
   playAgainBtn.addEventListener("click", getRandomWord);
+
+  const audio = new Audio("ram_aayenge_to_angna.mp3");
+audio.muted = true; // Start muted
+audio.play().then(() => {
+    audio.muted = false; // Unmute after autoplay starts
+}).catch(e => console.error("Autoplay failed:", e));
