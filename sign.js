@@ -56,7 +56,11 @@ document.querySelector(".hi").addEventListener("click", async () => {
     const email = document.querySelector("input[type='email']").value.trim();
     const password = document.querySelector("input[type='password']").value.trim();
   
-    document.querySelector(".hi").style.backgroundColor = 'yellow';
+    document.querySelector(".hi").style.backgroundColor = 'red';
+
+    setTimeout(() => {
+    document.querySelector(".hi").style.backgroundColor = ''; // Reset to default
+    }, 500); // 2000 milliseconds = 2 seconds
 
     if (!email || !password) {
         alert("Please fill in all fields.");
