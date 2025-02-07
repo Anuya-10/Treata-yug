@@ -30,6 +30,6 @@ document.querySelector('.four').addEventListener('click',function(){
     
 })
 document.querySelector('.five').addEventListener('click',function(){
-    window.location.href='bhajans.html';
+    window.location.href='bhajan.html';
     
 })
