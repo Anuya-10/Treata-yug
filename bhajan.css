@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('backgrnd.jpg'); 
+    background-size: auto; 
+    background-repeat: repeat-x;
+}
+
+header {
+    
+    color: #fff;
+    text-align: center;
+    font-family: 'Georgia', serif; 
+}
+
+header h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bolder;
+    color: orange; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); 
+}
+
+.description {
+    text-align: center;
+    margin: 40px 20px;
+    padding: 25px;
+    background-color: wheat; 
+    border-radius: 12px;
+    margin-top: 450px;
+    max-width: 700px;
+    width: 100%;
+    font-size: 1.3rem;
+    color: black;
+    border: 2px solid black;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);;
+}
+
+.description p {
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.spotify-link {
+    text-align: center;
+    background-color: #f7d55d; 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);
+    margin-top: 40px;
+    max-width: 700px;
+    width: 100%;
+    border: 2px solid black;
+}
+
+.spotify-link h2 {
+    font-size: 2.5rem;
+    color: #6f4f3b;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+}
+
+.spotify-link p {
+    color: #6f4f3b;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.spotify-button {
+    display: inline-block;
+    background-color: #1DB954;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid black;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.spotify-button:hover {
+    background-color: #1ed760;
+    transform: scale(1.1);
+}
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .description, .spotify-link {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .spotify-button {
+        font-size: 1.5rem;
+        padding: 15px 30px;
+    }
+}
