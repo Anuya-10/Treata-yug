@@ -14,11 +14,11 @@ document.querySelector('.two').addEventListener('click',function(){
     
 })
 document.querySelector('.six').addEventListener('click',function(){
-    window.location.href='learnpage.html';
+    window.location.href='sl.html';
     
 })
 document.querySelector('.one').addEventListener('click',function(){
-    window.location.href='sl.html';
+    window.location.href='learnpage.html';
     
 })
 document.querySelector('.three').addEventListener('click',function(){
