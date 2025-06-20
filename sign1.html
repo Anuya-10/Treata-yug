@@ -1,40 +1,195 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>treta yug</title>
-    <link rel="stylesheet" href="sign.css">
-  </head>
-  <body>
-<div class="box">
-    
+<head>
+  <meta charset="utf-8" />
+  <title>Treta Yug - Auth</title>
+  <link rel="stylesheet" href="sign.css">
+  <style>
+    body {
+      background-image: url('back7.png.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .box1 {
+      background-color: antiquewhite;
+      border-radius: 5px;
+      border:2px  grey;
+      box-shadow:0px 0px 4px 5px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 450px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .image {
+      background-image: url("user3.webp");
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      margin: 0 auto 20px;
+    }
+
+    .input {
+      width: 85%;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0px 0px 2px 2px rgb(197, 169, 147);
+      background-color: coral;
+      color: black;
+      border-radius: 2px;
+      font-size: 13px;
+    }
+
+    .input::placeholder {
+      color: black;
+      font-size: 15px;
+    }
+
+    .sign {
+      width: 220px;
+      height: 35px;
+      border-radius: 3px;
+      background-color: black;
+      color: white;
+      font-size: 15px;
+      border: 4px solid black;
+      margin-top: 10px;
+      cursor: pointer;
+      
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .forgot-password {
+      width: 85%;
+      margin-bottom: 10px;
+    }
+
+    .forgot-password a {
+      font-size: 14px;
+      color: #161664;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .switch-link {
+      margin-top: 15px;
+      font-size: 14px;
+      cursor: pointer;
+      color: rgb(29, 29, 105);
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .input {
+        width: 90%;
+      }
+
+      .forgot-password {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
     <div class="box1">
-        <div class="sec-box1">
-           <div class="image"></div>
 
-            <div class="thir box3">
-               
-                <label for="username"></label>
-                <input type="email" class="input" placeholder="Email id">
-            </div>
-            <div class="thir box2">
-                <label for="password"></label>
-                <input type="password"class="input" placeholder="create password">
-            </div>
-            <br>
-                <br>
-                <br>
-                
-                <input type="button" class="sign" value="Sign In">
-                
-            &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-                <input type="button" class="sign hi" value="Create Ac.">
+      <div class="image"></div>
 
-            </div>
+      <!-- 🔒 LOGIN FORM -->
+      <form id="login-form" class="form-group">
+
+       
+        <input type="email" name="email" class="input" placeholder="Enter email" required>
+        <input type="password" name="password" class="input" placeholder="Enter password" required>
+        <div class="forgot-password">
+          <a href="forgot.html">Forgot Password?</a>
         </div>
+        <input type="submit" value="Sign In" class="sign">
+        <div class="switch-link" onclick="toggleForm()">Don't have an account? Create one</div>
+      </form>
+
+      <!-- 🆕 SIGNUP FORM -->
+      <form id="signup-form" class="form-group hidden">
+        
+        <input type="email" name="email" class="input" placeholder="Enter email" required>
+        <input type="password" name="password" class="input" placeholder="Create password" required>
+        <input type="password" name="confirmPassword" class="input" placeholder="Confirm password" required>
+        <input type="submit" value="Create Account" class="sign">
+        <div class="switch-link" onclick="toggleForm()">Already have an account? Sign In</div>
+      </form>
+
     </div>
-    </div>
-    <script src="sign.js"></script>
-    <script src="server.js"></script>
-    </body>
-    </html>
+  </div>
+
+  <script>
+    function toggleForm() {
+      document.getElementById("login-form").classList.toggle("hidden");
+      document.getElementById("signup-form").classList.toggle("hidden");
+    }
+  </script>
+  <script>
+    function isValidEmail(email) {
+      const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+      return pattern.test(email);
+    }
+  
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+      const email = this.email.value.trim();
+      if (!isValidEmail(email)) {
+        alert("Please enter a valid email address.");
+        e.preventDefault();
+      }
+    });
+  
+    document.getElementById("signup-form").addEventListener("submit", function (e) {
+      const email = this.email.value.trim();
+      const password = this.password.value;
+      const confirmPassword = this.confirmPassword.value;
+  
+      if (!isValidEmail(email)) {
+        alert("Please enter a valid email address.");
+        e.preventDefault();
+        return;
+      }
+  
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        e.preventDefault();
+      }
+    });
+  </script>
+  
+  <script src="sign.js" defer></script>
+
+
+</body>
+</html>
