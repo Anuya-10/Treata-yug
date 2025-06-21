@@ -272,7 +272,7 @@ const questions = [
     
     
 ];
-const heading = document.getElementById("pageHeading");
+const heading = document.getElementById("pageHeading"); // select element using id
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
@@ -281,59 +281,59 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 function startQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "Next";
-    showQuestion();
+    currentQuestionIndex = 0; // sets ques index to zero
+    score = 0; // sets score to zero
+    nextButton.innerHTML = "Next"; // changes text on nextbutton to move to next ques
+    showQuestion(); //call
 }
 
 function showQuestion() {
-    resetState();
+    resetState(); //remove old ans and ques 
 
-    const level = Math.floor(currentQuestionIndex / 5) + 1;
+    const level = Math.floor(currentQuestionIndex / 5) + 1; // changes level number
     heading.textContent = `Level ${level}`;
 
-    const currentQuestion = questions[currentQuestionIndex];
-    const questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = `${questionNo}. ${currentQuestion.question}`;
+    const currentQuestion = questions[currentQuestionIndex]; //select ques from ques array
+    const questionNo = currentQuestionIndex + 1; // number starts from 1 not from zero
+    questionElement.innerHTML = `${questionNo}. ${currentQuestion.question}`; // chmages ques and number
 
     currentQuestion.answers.forEach((answer) => {
-        const button = document.createElement("button");
-        button.innerHTML = answer.text;
+        const button = document.createElement("button"); //create button
+        button.innerHTML = answer.text; //change answer buttons
         button.classList.add("btn");
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
+        if (answer.correct) { //gives boolean value true or false
+            button.dataset.correct = answer.correct; //This attribute can be used later for checking if the selected answer is correct  stores the vlue
         }
-        button.addEventListener("click", selectAnswer);
+        button.addEventListener("click", selectAnswer); 
         answerButtons.appendChild(button);
     });
 }
 
 function resetState() {
-    nextButton.style.display = "none";
+    nextButton.style.display = "none"; //hides the "Next" button 
     while (answerButtons.firstChild) {
-        answerButtons.removeChild(answerButtons.firstChild);
+        answerButtons.removeChild(answerButtons.firstChild); //clears all previous answer buttons before displaying a new question
     }
 }
 
 function selectAnswer(e) {
-    const selectedButton = e.target;
+    const selectedButton = e.target; // Captures the button the user clicked
     const isCorrect = selectedButton.dataset.correct === "true";
     if (isCorrect) {
-        selectedButton.classList.add("correct");
-        score++;
+        selectedButton.classList.add("correct"); //add styling in the text
+        score++; // increase the score
     } else {
-        selectedButton.classList.add("incorrect");
+        selectedButton.classList.add("incorrect"); 
     }
 
     Array.from(answerButtons.children).forEach((button) => {
         if (button.dataset.correct === "true") {
             button.classList.add("correct");
         }
-        button.disabled = true;
+        button.disabled = true; //disable all button
     });
 
-    nextButton.style.display = "block";
+    nextButton.style.display = "block"; //"Next" button appears
 }
 
 function showLevelScore() {
@@ -352,7 +352,7 @@ function showScore() {
 }
 
 function handleNextButton() {
-    currentQuestionIndex++;
+    currentQuestionIndex++;  // Move to the next question
     
     if (currentQuestionIndex < questions.length) {
         if (currentQuestionIndex % 5 === 0) {
@@ -367,11 +367,11 @@ function handleNextButton() {
 
 nextButton.addEventListener("click", () => {
     if (currentQuestionIndex < questions.length) {
-        handleNextButton();
+        handleNextButton(); //moves to the next question
     } else {
-        startQuiz();
+        startQuiz(); //restarting the quiz
     }
 });
 
-startQuiz();
+startQuiz(); //restarting the quiz
 
