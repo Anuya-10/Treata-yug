@@ -1,3 +1,4 @@
+require("dotenv").config();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
@@ -8,15 +9,17 @@ const dns = require("dns").promises;  // for MX record check
 const validator = require("validator"); // for email validation
 
 
-const PORT = 3001;
-const SECRET_KEY = "your_secret_key"; 
+const PORT = process.env.PORT;
+const SECRET_KEY = process.env.SECRET_KEY;
 
 // Middleware
 const cors = require("cors");
 
 const corsOptions = {
-  origin: "*", // allow your frontend
-  credentials: true,
+  origin: ["http://127.0.0.1:5503", "http://localhost:5503", "https://your-frontend-url.com"],
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+  credentials: true
 };
 const express = require("express");
 const app = express();
@@ -27,7 +30,7 @@ app.use(bodyParser.json());
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb+srv://treatauser:treata%402024@cluster0.yvpwfbo.mongodb.net/authSystem?retryWrites=true&w=majority&appName=Cluster0")
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
