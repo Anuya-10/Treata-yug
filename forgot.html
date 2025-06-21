@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Forgot Password</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #fcb944;
+    }
+    .container {
+      background: white;
+      height: 200px;
+      width: 300px;
+      padding: 30px;
+      border-color: black;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px 10px  rgba(0,0,0,0.1);
+    }
+    input {
+      display: block;
+      width: 90%;
+      border:1px solid grey;
+      background-color:#fcb944;
+      box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+      color:black;
+      border-radius:5px;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    input::placeholder{
+      color:black;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+   <center> <h2>Reset Your Password</h2></center>
+    
+    <form id="forgot-password-form">
+      <input type="email" id="email" placeholder="Enter your email" required />
+      <br>
+      <center><button type="submit">Send Reset Link</button></center>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('forgot-password-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+
+      if (!email) {
+        console.log("Please enter your email.");
+        return;
+      }
+
+      try {
+        const response = await fetch('http://localhost:3001/forgot-password', {
+
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          console.log(data.message || "Password reset email sent!");
+          window.location.href = "reset-pass.html";
+        } else {
+          console.log(data.message || "Failed to send reset email.");
+        }
+      } catch (err) {
+        console.log("Network error, please try again later.");
+      }
+    });
+  </script>
+</body>
+</html>
