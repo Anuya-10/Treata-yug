@@ -27,7 +27,7 @@ document.querySelector("#login-form").addEventListener("submit", async (e) => {
   if (!isValidEmail(email)) return showFeedback(button, "Enter a valid email.");
 
   try {
-    const response = await fetch("http://127.0.0.1:3001/signin", {
+    const response = await fetch("https://treata-yug.onrender.com/signin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -48,7 +48,7 @@ document.querySelector("#login-form").addEventListener("submit", async (e) => {
       }
 
       // Call /verify-email to complete the process
-      const verifyRes = await fetch("http://127.0.0.1:3001/verify-email", {
+      const verifyRes = await fetch("https://treata-yug.onrender.com/verify-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, verificationCode: code }), // FIXED KEY HERE
@@ -89,7 +89,7 @@ document.querySelector("#signup-form").addEventListener("submit", async (e) => {
   if (password !== confirmPassword) return showFeedback(button, "Passwords do not match.");
 
   try {
-    const response = await fetch("http://127.0.0.1:3001/signup", {
+    const response = await fetch("https://treata-yug.onrender.com/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -106,7 +106,7 @@ document.querySelector("#signup-form").addEventListener("submit", async (e) => {
       }
     
       // Send code to backend for verification
-      const verifyResponse = await fetch("http://127.0.0.1:3001/verify-email", {
+      const response = await fetch("https://treata-yug.onrender.com/forgot-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, verificationCode }),
