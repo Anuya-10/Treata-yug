@@ -323,6 +323,10 @@ app.post("/reset-password", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+app.get('/', (req, res) => {
+  res.send('Backend is live!');
+});
+
 
 // Start server
 app.listen(PORT, () => {
