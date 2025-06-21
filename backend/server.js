@@ -15,7 +15,7 @@ const SECRET_KEY = "your_secret_key";
 const cors = require("cors");
 
 const corsOptions = {
-  origin: "http://127.0.0.1:5503", // allow your frontend
+  origin: "*", // allow your frontend
   credentials: true,
 };
 const express = require("express");
