@@ -1,3 +1,32 @@
+// Set profile letter from email stored in localStorage
+const email = localStorage.getItem("userEmail");
+if (email) {
+  document.getElementById("profileLetter").innerText = email[0].toUpperCase();
+}
+
+// Toggle dropdown on click
+document.getElementById("profileLetter").addEventListener("click", () => {
+  const menu = document.getElementById("profileMenu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+});
+
+// Optional: hide dropdown if clicked outside
+document.addEventListener("click", (e) => {
+  const menu = document.getElementById("profileMenu");
+  if (!e.target.closest(".profile-container")) {
+    menu.style.display = "none";
+  }
+});
+
+function viewProfile() {
+  alert("Profile page coming soon!");
+}
+
+function logout() {
+  localStorage.removeItem("userEmail");
+  window.location.href = "signin.html"; // or your actual sign-in page
+}
+
 const images=document.querySelectorAll('.image-gallery img');
 let currentIndex=0;
 
