@@ -9,7 +9,8 @@ const dns = require("dns").promises;  // for MX record check
 const validator = require("validator"); // for email validation
 
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
+const MONGO_URI = process.env.MONGO_URI;
 const SECRET_KEY = process.env.SECRET_KEY;
 
 // Middleware
