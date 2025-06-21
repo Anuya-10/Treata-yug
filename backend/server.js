@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 
 // Connect to MongoDB
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(MONGO_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
@@ -136,7 +136,7 @@ app.post("/signup", async (req, res) => {
 
         // Send verification email
         const mailOptions = {
-          from: 'anushkayadav9e.gr1@gmail.com',
+          from: process.env.EMAIL_USER,
           to: email,
           subject: 'Verify Your Email (Resent)',
           text: `Your verification code is: ${verificationCode}`,
@@ -236,8 +236,10 @@ app.post("/signin", async (req, res) => {
     res.status(200).json({ message: "Sign in successful", token });
 
   } catch (error) {
-    res.status(500).json({ message: "Error during sign in", error });
+    console.error("Full sign-in error:", error); // <--- This logs the full error to terminal
+    res.status(500).json({ message: "Error during sign in", error: error.message });
   }
+  
 });
 
 
@@ -327,8 +329,13 @@ app.post("/reset-password", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+
+
 app.get('/', (req, res) => {
   res.send('Backend is live!');
+});
+app.get("/healthz", (req, res) => {
+  res.status(200).send("OK");
 });
 
 
