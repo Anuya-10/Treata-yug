@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://127.0.0.1:27017/authSystem")
+  .connect("mongodb+srv://treatauser:treata%402024@cluster0.yvpwfbo.mongodb.net/authSystem?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
