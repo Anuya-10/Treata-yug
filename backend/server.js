@@ -9,7 +9,7 @@ const dns = require("dns").promises;  // for MX record check
 const validator = require("validator"); // for email validation
 
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 const MONGO_URI = process.env.MONGO_URI;
 const SECRET_KEY = process.env.SECRET_KEY;
 
@@ -35,7 +35,7 @@ mongoose.connect(MONGO_URI)
   .then(() => {
     console.log("✅ Connected to MongoDB");
     app.listen(PORT, () => {
-      console.log(`🚀 Server running on http://127.0.0.1:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
     });
   })
   .catch((err) => {
