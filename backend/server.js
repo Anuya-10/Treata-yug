@@ -30,11 +30,8 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose
-  .connect(MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
+mongoose.connect(MONGO_URI)
+
   .then(() => {
     console.log("✅ Connected to MongoDB");
     app.listen(PORT, () => {
