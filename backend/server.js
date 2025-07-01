@@ -20,7 +20,8 @@ const corsOptions = {
   origin: [
     "http://127.0.0.1:5503",
     "http://localhost:5503",
-    "https://anuya-10.github.io", // old placeholder
+    "https://anuya-10.github.io", 
+    "https://anuya-10.github.io/treata-yug",// old placeholder
     "https://treata-yug.onrender.com" // ✅ your actual frontend
   ],
   methods: ["GET", "POST"],
