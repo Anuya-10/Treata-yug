@@ -23,9 +23,15 @@ function viewProfile() {
 }
 
 function logout() {
+  // Clear auth data
+  localStorage.removeItem("token");
   localStorage.removeItem("userEmail");
-  window.location.href = "signin.html"; // or your actual sign-in page
+
+  // Redirect to login
+  window.location.href = "sign1.html";
 }
+
+
 
 const images=document.querySelectorAll('.image-gallery img');
 let currentIndex=0;
