@@ -1,6 +1,6 @@
 // Set profile letter from email stored in localStorage
 // Prevent access if token is missing
-const token = localStorage.getItem("token");
+const token = localStorage.getItem("authtoken");
 if (!token) {
   window.location.href = "sign1.html"; // your login page
 }
@@ -37,12 +37,18 @@ function viewProfile() {
 
 function logout() {
   // Clear auth data
-  localStorage.removeItem("token");
+  localStorage.removeItem("authtoken");
   localStorage.removeItem("userEmail");
 
   // Redirect to login
   window.location.href = "sign1.html";
 }
+window.onpageshow = function(event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
+};
+
 
 
 
