@@ -1,4 +1,17 @@
 // Set profile letter from email stored in localStorage
+// Prevent access if token is missing
+const token = localStorage.getItem("token");
+if (!token) {
+  window.location.href = "sign1.html"; // your login page
+}
+
+// Prevent page from loading from back/forward cache
+window.onpageshow = function(event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
+};
+
 const email = localStorage.getItem("userEmail");
 if (email) {
   document.getElementById("profileLetter").innerText = email[0].toUpperCase();
