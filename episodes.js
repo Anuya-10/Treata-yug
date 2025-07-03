@@ -1,6 +1,7 @@
 let watchedEpisodes = new Set();
 const totalEpisodes = 24;
 
+// ✅ Load from backend using auth token
 async function loadProgressFromBackend() {
   const token = localStorage.getItem("authToken");
   if (!token) return;
@@ -12,17 +13,20 @@ async function loadProgressFromBackend() {
       }
     });
 
-    const data = await res.json();
-    if (res.ok) {
-      watchedEpisodes = new Set(data.episodesWatched);
-      updateProgressUI();
+    if (!res.ok) {
+      console.error("Failed to load progress");
+      return;
     }
+
+    const data = await res.json();
+    watchedEpisodes = new Set(data.episodesWatched); // 👈 Set correct data
+    updateProgressUI(); // ✅ Only call AFTER data is loaded
   } catch (err) {
-    console.error("Error loading progress from backend:", err);
+    console.error("Error loading progress:", err);
   }
 }
 
-
+// ✅ Save episode when watched
 async function saveProgressToBackend(episodeNumber) {
   const token = localStorage.getItem("authToken");
   if (!token) return;
@@ -37,12 +41,11 @@ async function saveProgressToBackend(episodeNumber) {
       body: JSON.stringify({ episodeNumber })
     });
   } catch (err) {
-    console.error("Error saving progress to backend:", err);
+    console.error("Error saving progress:", err);
   }
 }
 
-
-
+// ✅ Update UI
 function updateProgressUI() {
   const watchedCount = watchedEpisodes.size;
   const percentage = (watchedCount / totalEpisodes) * 100;
@@ -50,42 +53,40 @@ function updateProgressUI() {
   document.getElementById("progressBar").style.width = percentage + "%";
 }
 
+// ✅ Track individual video progress
 function trackProgress(video, episodeNumber) {
   if (!video) return;
 
-  video.addEventListener("ended", () => {
+  function markWatched() {
     if (!watchedEpisodes.has(episodeNumber)) {
       watchedEpisodes.add(episodeNumber);
       updateProgressUI();
-      saveProgressToBackend(episodeNumber);  // ✅ ONLY backend
+      saveProgressToBackend(episodeNumber);
     }
-  });
+  }
 
+  video.addEventListener("ended", markWatched);
   video.addEventListener("seeked", () => {
-    if (
-      video.duration > 0 &&
-      video.currentTime >= video.duration - 2 &&
-      !watchedEpisodes.has(episodeNumber)
-    ) {
-      watchedEpisodes.add(episodeNumber);
-      updateProgressUI();
-      saveProgressToBackend(episodeNumber);  // ✅ ONLY backend
+    if (video.duration > 0 && video.currentTime >= video.duration - 2) {
+      markWatched();
     }
   });
 }
 
-
-// Searchbar functionality
+// ✅ Search functionality
 document.getElementById("searchbox").addEventListener("keyup", function (event) {
   if (event.key === "Enter") {
-    let input = document.getElementById("searchbox").value.trim();
-    let episodeNumber = parseInt(input);
+    const input = document.getElementById("searchbox").value.trim();
+    const episodeNumber = parseInt(input);
 
     if (episodeNumber > 24) {
       alert("Episode not yet released. Coming soon 😊");
-    } else if (!isNaN(episodeNumber) && episodeNumber >= 1 && episodeNumber <= 24) {
-      let episodeId = "episode" + episodeNumber;
-      let episodeElement = document.getElementById(episodeId);
+      return;
+    }
+
+    if (!isNaN(episodeNumber) && episodeNumber >= 1 && episodeNumber <= 24) {
+      const episodeId = "episode" + episodeNumber;
+      const episodeElement = document.getElementById(episodeId);
 
       if (episodeElement) {
         episodeElement.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -98,11 +99,11 @@ document.getElementById("searchbox").addEventListener("keyup", function (event) 
   }
 });
 
+// ✅ DOM Content Load
 document.addEventListener("DOMContentLoaded", async () => {
-  await loadProgressFromBackend();  // Wait for data
-            
+  await loadProgressFromBackend(); // ✅ Wait for backend
   for (let i = 1; i <= totalEpisodes; i++) {
     const video = document.getElementById("video" + i);
-    trackProgress(video, i);      // attach tracking
+    trackProgress(video, i);
   }
 });
