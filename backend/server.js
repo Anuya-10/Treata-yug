@@ -52,6 +52,7 @@ mongoose.connect(MONGO_URI)
 
 // User Schema
 const userSchema = new mongoose.Schema({
+  username: {type: String,required: true,unique: true}, // optional if you want usernames to be unique}
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   otp: { type: String },              // store OTP for forgot password
