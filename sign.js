@@ -72,68 +72,65 @@ document.querySelector("#login-form").addEventListener("submit", async (e) => {
     showFeedback(button, "An error occurred. Try again.");
   }
 });
+//signup handeler
 
-
-// ✅ Signup handler
-// ✅ Signup handler with email verification
 document.querySelector("#signup-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const form = e.target;
-  const username = form.querySelector("input[name='username']").value.trim(); // ✅ new line
+  const username = form.querySelector("input[name='username']").value.trim();
   const email = form.querySelector("input[name='email']").value.trim();
   const password = form.querySelector("input[name='password']").value.trim();
   const confirmPassword = form.querySelector("input[name='confirmPassword']").value.trim();
   const button = form.querySelector("input[type='submit']");
 
-  if (!username ||!email || !password || !confirmPassword) return showFeedback(button, "Please fill in all fields.");
+  if (!username || !email || !password || !confirmPassword)
+    return showFeedback(button, "Please fill in all fields.");
   if (!isValidEmail(email)) return showFeedback(button, "Enter a valid email.");
   if (password !== confirmPassword) return showFeedback(button, "Passwords do not match.");
 
   try {
-    const response = await fetch("https://treata-yug.onrender.com/signup", {
+    const signupResponse = await fetch("https://treata-yug.onrender.com/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, email, password }),
     });
 
-    const data = await response.json();
-    if (response.ok || data.requireVerification) {
-      // Ask for verification code even if user existed but was unverified
+    const data = await signupResponse.json();
+
+    if (signupResponse.ok || data.requireVerification) {
       const verificationCode = prompt("A 6-digit code has been sent to your email. Please enter it to verify your account:");
-    
+
       if (!verificationCode || verificationCode.length !== 6) {
-        showFeedback(button, "Invalid code. Try again.");
-        return;
+        return showFeedback(button, "Invalid code. Try again.");
       }
-    
-      // Send code to backend for verification
-      const response = await fetch("https://treata-yug.onrender.com/forgot-password", {
+
+      const verifyResponse = await fetch("https://treata-yug.onrender.com/verify-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, verificationCode }),
       });
-    
+
       const verifyData = await verifyResponse.json();
-    
+
       if (verifyResponse.ok) {
         showFeedback(button, "Email verified successfully!", false);
-        localStorage.setItem("username", username);  // ✅ Use the one from input
-
-        window.location.href = "front.html"; // or redirect to login if preferred
+        localStorage.setItem("username", username);
+        window.location.href = "front.html";
       } else {
         showFeedback(button, verifyData.message || "Verification failed.");
       }
+
     } else {
       showFeedback(button, data.message || "Signup failed.");
     }
-    
 
   } catch (error) {
     console.error("Signup Error:", error);
     showFeedback(button, "An error occurred. Try again.");
   }
 });
+
 
 // ✅ Toggle between login and signup
 function toggleForm() {
