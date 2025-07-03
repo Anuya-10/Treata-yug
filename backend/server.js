@@ -130,7 +130,7 @@ app.post("/verify-email", async (req, res) => {
 
 // Sign Up Route
 app.post("/signup", async (req, res) => {
-  const { email, password } = req.body;
+  const { username,email, password } = req.body;
 
   if (!(await isValidEmail(email))) {
     return res.status(400).json({ message: "Invalid email address" });
