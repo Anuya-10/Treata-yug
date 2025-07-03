@@ -100,7 +100,7 @@ document.getElementById("searchbox").addEventListener("keyup", function (event) 
 
 document.addEventListener("DOMContentLoaded", async () => {
   await loadProgressFromBackend();  // Wait for data
-  updateProgressUI();               // Then update UI
+            
   for (let i = 1; i <= totalEpisodes; i++) {
     const video = document.getElementById("video" + i);
     trackProgress(video, i);      // attach tracking
