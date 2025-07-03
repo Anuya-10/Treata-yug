@@ -13,25 +13,28 @@ window.onpageshow = function(event) {
   }
 };
 
-// 👤 Profile letter setup
-  const username = localStorage.getItem("username");
-  const email = localStorage.getItem("userEmail");
-  const profileLetterEl = document.getElementById("profileLetter");
+// 👤 Profile letter and username setup
+const username = localStorage.getItem("username");
+const email = localStorage.getItem("userEmail");
+const profileLetterEl = document.getElementById("profileLetter");
+const profileNameEl = document.getElementById("profileName"); // ✅ if you add this in HTML
 
-  if (profileLetterEl) {
-    if (username) {
-      profileLetterEl.textContent = username.charAt(0).toUpperCase();
-    } else if (email) {
-      profileLetterEl.textContent = email.charAt(0).toUpperCase();
-    }
-  
+if (profileLetterEl) {
+  if (username) {
+    profileLetterEl.textContent = username.charAt(0).toUpperCase();
+    if (profileNameEl) profileNameEl.textContent = username; // ✅ Show full name next to icon
+  } else if (email) {
+    profileLetterEl.textContent = email.charAt(0).toUpperCase();
+    if (profileNameEl) profileNameEl.textContent = email.split('@')[0]; // Fallback
+  }
+}
 
-// Toggle dropdown on click
+// ✅ Toggle dropdown
 document.getElementById("profileLetter").addEventListener("click", () => {
   const menu = document.getElementById("profileMenu");
   menu.style.display = menu.style.display === "block" ? "none" : "block";
 });
-  }
+
 // Optional: hide dropdown if clicked outside
 document.addEventListener("click", (e) => {
   const menu = document.getElementById("profileMenu");
