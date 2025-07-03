@@ -25,9 +25,21 @@ body {
 }
 .second {
     display: flex;
+    align-items: center;
     background-color: white;
-    border: 2px solid black;
+    justify-content: space-between;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
+
+.left-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
 img {
     margin-top: 10px;
     width: 120px;
@@ -46,20 +58,25 @@ div .sfour {
 .profile-container {
     position: relative;
     display: flex;
+    cursor:pointer;
     margin-left: auto;
     margin-right: 20px;
     margin-top: 15px;
   }
   
   .profile-circle {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background-color: lightseagreen;
     color: white;
     border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    font-weight: bold;
+    display: flex;
+    margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+
     cursor: pointer;
     box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
   }
@@ -134,13 +151,13 @@ div .sfive {
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 .ssix {
-    align-items: flex-end;
-    margin-top: 20px;
-    margin-right: 0;
-    float: right;
-    padding-left: 150px;
+    margin-left: auto; /* push to right in flex container */
+    display: flex;
+    align-items: center;
 }
+
 button {
     border: 2px;
     background-color: snow;
@@ -213,95 +230,91 @@ button {
     opacity: 1;
 }
 
-/* Media Queries for Responsive Design */
-@media screen and (max-width: 1200px) {
-    .second {
-        flex-direction: column;
-    }
-
-    .first {
-        font-size: 18px;
-    }
-
-    .sfour {
-        width: 80%;
-    }
-
-    input {
-        width: 80%;
-    }
-
-    .sign {
-        width: 70%;
-    }
-
-    .third {
-        height: 40px;
-    }
-
-    .thir {
-        width: 80%;
-        font-size: 18px;
-    }
-
-    .image-gallery {
-        width: 90%;
-        height: 400px;
-    }
-}
-
 @media screen and (max-width: 768px) {
-    .first {
-        font-size: 16px;
-    }
+  .second {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 
-    input {
-        width: 100%;
-    }
+  .left-header {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 
-    .sfour, .sfive {
-        width: 100%;
-    }
+  .stwo {
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
+  }
 
-    .sign {
-        width: 100%;
-        margin-top: 10px;
-    }
+  input {
+    width: 90%;
+    height: 40px;
+    font-size: 16px;
+  }
 
-    .third {
-        height: 40px;
-        flex-direction: column;
-    }
+  .profile-container {
+    margin: 10px auto;
+    justify-content: center;
+  }
 
-    .thir {
-        font-size: 16px;
-        padding-left: 0;
-    }
+  .third {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    padding: 10px 0;
+  }
 
-    .image-gallery {
-        width: 100%;
-        height: 300px;
-    }
+  .thir {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 18px;
+  }
+
+  .image-gallery {
+    width: 90%;
+    height: 300px;
+  }
+
+  .textscroll {
+    font-size: 16px;
+    height: 45px;
+  }
+
+  .scroll img {
+    object-fit: cover;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .first {
-        font-size: 14px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
+  .first {
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 
-    .second {
-        flex-direction: column;
-        text-align: center;
-    }
+  .stwo {
+    font-size: 18px;
+  }
 
-    .textscroll {
-        font-size: 16px;
-        height: 45px;
-    }
+  input {
+    font-size: 15px;
+  }
 
-    .scroll {
-        height: 200px;
-    }
+  .profile-circle {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .image-gallery {
+    height: 250px;
+  }
+
+  .thir {
+    font-size: 16px;
+  }
 }
