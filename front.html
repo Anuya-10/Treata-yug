@@ -14,29 +14,30 @@
       WELCOME  TO  OUR  WEBSITE 
     </div>
     
-    <div class ="second">
-        <div class="sone"><img src="treta.png">&emsp;&emsp;</div>
-        <div class="stwo">
-            Explore&emsp;
-        </div>
-        <div class="sthree"><input type="text" placeholder=" 🔍      search anything "></div>
-        <div class="sfour"></div>
-        <div class="sfive">&emsp;</div>
-        <div class="sfive">&emsp;</div>
-        <div class="ssix">
-          <div class="profile-container">
-            <div class="profile-circle" id="profileLetter"></div>
-            <div class="dropdown-menu" id="profileMenu">
-              <ul>
-                <li onclick="viewProfile()">View Profile</li>
-                <li onclick="logout()">Log Out</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-       
-        
+    <div class="second">
+  <div class="left-header">
+    <div class="sone"><img src="treta.png" alt="logo"></div>
+    <div class="stwo">Explore</div>
+    <div class="sthree">
+      <input type="text" placeholder="🔍 Search anything" />
     </div>
+  </div>
+
+  <div class="ssix">
+    <div class="profile-container">
+      <div class="profile-circle" id="profileLetter">A</div>
+      <div class="dropdown-menu" id="profileMenu">
+        <ul>
+          <li onclick="viewProfile()">View Profile</li>
+          <li onclick="logout()">Log Out</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+   
     
     <div class="third">
       <div class="thir one">LEARNING </div>
@@ -89,6 +90,17 @@
     <button  class="dio"onclick="document.getElementById('fluteSound').play()">Play Flute Sound</button>
     </div>
   <button onclick="window.location.href='adminsee.html'">Only for Developers</button>
+  <script>
+  // Replace this with the actual signed-in user's email
+  const userEmail = localStorage.getItem("userEmail") || "user@example.com"; // Example fallback
+
+  // Get first letter and make it uppercase
+  const firstLetter = userEmail.charAt(0).toUpperCase();
+
+  // Set it in the profile circle
+  document.getElementById("profileLetter").textContent = firstLetter;
+</script>
+
   <script src="front.js"></script>
   </body>
   </html>
