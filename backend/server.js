@@ -182,17 +182,19 @@ app.post("/signup", async (req, res) => {
     const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
 
     const newUser = new User({
+      username, // ✅ ADD THIS
       email,
       password: hashedPassword,
       verified: false,
       verificationCode,
     });
 
+
     await newUser.save();
 
     // Send verification email to new user
     const mailOptions = {
-      from: 'anushkayadav9e.gr1@gmail.com',
+      from: process.env.EMAIL_USER,
       to: email,
       subject: 'Verify Your Email',
       text: `Your verification code is: ${verificationCode}`,
@@ -249,7 +251,11 @@ app.post("/signin", async (req, res) => {
     if (!isPasswordValid) return res.status(401).json({ message: "Invalid credentials" });
 
     const token = jwt.sign({ email: user.email }, SECRET_KEY, { expiresIn: "1h" });
-    res.status(200).json({ message: "Sign in successful", token });
+    res.status(200).json({ 
+      message: "Sign in successful", 
+      token, 
+      username: user.username // ✅ Add this!
+    });
 
   } catch (error) {
     console.error("Full sign-in error:", error); // <--- This logs the full error to terminal
