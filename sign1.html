@@ -107,13 +107,54 @@
     }
 
     @media (max-width: 768px) {
-      .input {
-        width: 90%;
-      }
+  .box {
+    padding: 8% 5%;
+  }
 
-      .forgot-password {
-        width: 90%;
-      }
+  .box1 {
+    width: 95%;
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .thir {
+    font-size: 18px;
+  }
+
+  .input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sign {
+    width: 100%;
+  }
+
+  .forgot-password {
+    text-align: center;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .thir {
+    font-size: 16px;
+  }
+
+  .input {
+    font-size: 14px;
+    height: 32px;
+  }
+
+  .sign {
+    font-size: 16px;
+    height: 36px;
+  }
+
+  .forgot-password a {
+    font-size: 13px;
+  }
+
     }
   </style>
 </head>
@@ -136,7 +177,7 @@
         <input type="submit" value="Sign In" class="sign">
         <div class="switch-link" onclick="toggleForm()">Don't have an account? Create one</div>
       </form>
-      
+
       <!-- 🆕 SIGNUP FORM -->
       <form id="signup-form" class="form-group hidden">
         <input type="text" name="username"class="input" placeholder="Enter your username" required />
