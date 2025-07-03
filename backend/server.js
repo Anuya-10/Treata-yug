@@ -103,28 +103,22 @@ async function isValidEmail(email) {
 
 // Routes
 // Verify Email Route
-app.post("/verify-email", async (req, res) => {
-  const { email, verificationCode } = req.body;
-
-  try {
-    const user = await User.findOne({ email });
-
-    if (!user) return res.status(404).json({ message: "User not found" });
-
-    if (user.verificationCode === verificationCode) {
-      user.verified = true;
-      user.verificationCode = undefined;
-      await user.save();
-      return res.status(200).json({ message: "Email verified" });
-    } else {
-      return res.status(400).json({ message: "Invalid verification code" });
-    }
-    
-  } catch (error) {
-    console.error("Error verifying email:", error);
-    res.status(500).json({ message: "Internal server error" });
-  }
+const response = await fetch("https://treata-yug.onrender.com/verify-email", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ email, verificationCode }),
 });
+
+const verifyData = await response.json();
+
+if (response.ok) {
+  showFeedback(button, "Email verified successfully!", false);
+  localStorage.setItem("username", username);
+  window.location.href = "front.html";
+} else {
+  showFeedback(button, verifyData.message || "Verification failed.");
+}
+
 
 
 
