@@ -59,6 +59,8 @@ const userSchema = new mongoose.Schema({
   otpExpiry: { type: Date }  ,
   verified: { type: Boolean, default: false },
 verificationCode: { type: String },
+episodesWatched: [{ type: Number }] // Add this to userSchema
+
 
            // OTP expiry time
 });
@@ -345,6 +347,52 @@ app.post("/reset-password", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+//backedn route for episode
+const authenticate = (req, res, next) => {
+  const token = req.headers.authorization?.split(" ")[1];
+  if (!token) return res.status(401).json({ message: "Unauthorized" });
+
+  try {
+    const decoded = jwt.verify(token, SECRET_KEY);
+    req.user = decoded;
+    next();
+  } catch {
+    res.status(401).json({ message: "Invalid token" });
+  }
+};
+
+app.post("/save-progress", authenticate, async (req, res) => {
+  const { episodeNumber } = req.body;
+  const email = req.user.email;
+
+  try {
+    const user = await User.findOne({ email });
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    if (!user.episodesWatched.includes(episodeNumber)) {
+      user.episodesWatched.push(episodeNumber);
+      await user.save();
+    }
+
+    res.status(200).json({ message: "Progress saved" });
+  } catch (err) {
+    res.status(500).json({ message: "Error saving progress", error: err });
+  }
+});
+
+app.get("/get-progress", authenticate, async (req, res) => {
+  const email = req.user.email;
+
+  try {
+    const user = await User.findOne({ email });
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    res.status(200).json({ episodesWatched: user.episodesWatched || [] });
+  } catch (err) {
+    res.status(500).json({ message: "Error fetching progress", error: err });
+  }
+});
+
 
 
 app.get('/', (req, res) => {
