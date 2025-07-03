@@ -41,9 +41,7 @@ async function saveProgressToBackend(episodeNumber) {
   }
 }
 
-function saveProgressLocally() {
-  localStorage.setItem("watchedEpisodes", JSON.stringify([...watchedEpisodes]));
-}
+
 
 function updateProgressUI() {
   const watchedCount = watchedEpisodes.size;
@@ -59,12 +57,10 @@ function trackProgress(video, episodeNumber) {
     if (!watchedEpisodes.has(episodeNumber)) {
       watchedEpisodes.add(episodeNumber);
       updateProgressUI();
-      saveProgressLocally();
-      saveProgressToBackend(episodeNumber);
+      saveProgressToBackend(episodeNumber);  // ✅ ONLY backend
     }
   });
 
-  // Optional: handle skipping to end
   video.addEventListener("seeked", () => {
     if (
       video.duration > 0 &&
@@ -73,11 +69,11 @@ function trackProgress(video, episodeNumber) {
     ) {
       watchedEpisodes.add(episodeNumber);
       updateProgressUI();
-      saveProgressLocally();
-      saveProgressToBackend(episodeNumber);
+      saveProgressToBackend(episodeNumber);  // ✅ ONLY backend
     }
   });
 }
+
 
 // Searchbar functionality
 document.getElementById("searchbox").addEventListener("keyup", function (event) {
@@ -103,17 +99,11 @@ document.getElementById("searchbox").addEventListener("keyup", function (event) 
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Load local progress first
-  updateProgressUI(); // show initial 0% or empty UI
-loadProgressFromBackend(); // will fetch correct episodes from server
+  updateProgressUI();             // show initial 0%
+  loadProgressFromBackend();      // load server-side progress
 
-
-  // Load server-side progress after DOM ready
-  loadProgressFromBackend();
-
-  // Attach listeners to all videos
   for (let i = 1; i <= totalEpisodes; i++) {
     const video = document.getElementById("video" + i);
-    trackProgress(video, i);
+    trackProgress(video, i);      // attach tracking
   }
 });
