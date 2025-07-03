@@ -38,6 +38,7 @@ document.querySelector("#login-form").addEventListener("submit", async (e) => {
     if (response.ok) {
       localStorage.setItem("authToken", data.token);
       showFeedback(button, "Login successful!", false);
+      localStorage.setItem("username", data.username);  // ✅ Add thii
       window.location.href = "front.html";
     } else if (data.requireVerification) {
       // Show OTP input
@@ -79,12 +80,13 @@ document.querySelector("#signup-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const form = e.target;
+  const username = form.querySelector("input[name='username']").value.trim(); // ✅ new line
   const email = form.querySelector("input[name='email']").value.trim();
   const password = form.querySelector("input[name='password']").value.trim();
   const confirmPassword = form.querySelector("input[name='confirmPassword']").value.trim();
   const button = form.querySelector("input[type='submit']");
 
-  if (!email || !password || !confirmPassword) return showFeedback(button, "Please fill in all fields.");
+  if (!username ||!email || !password || !confirmPassword) return showFeedback(button, "Please fill in all fields.");
   if (!isValidEmail(email)) return showFeedback(button, "Enter a valid email.");
   if (password !== confirmPassword) return showFeedback(button, "Passwords do not match.");
 
@@ -92,7 +94,7 @@ document.querySelector("#signup-form").addEventListener("submit", async (e) => {
     const response = await fetch("https://treata-yug.onrender.com/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ username, email, password }),
     });
 
     const data = await response.json();
@@ -116,6 +118,8 @@ document.querySelector("#signup-form").addEventListener("submit", async (e) => {
     
       if (verifyResponse.ok) {
         showFeedback(button, "Email verified successfully!", false);
+        localStorage.setItem("username", username);  // ✅ Use the one from input
+
         window.location.href = "front.html"; // or redirect to login if preferred
       } else {
         showFeedback(button, verifyData.message || "Verification failed.");
