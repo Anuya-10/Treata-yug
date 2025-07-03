@@ -59,9 +59,10 @@ const userSchema = new mongoose.Schema({
   otpExpiry: { type: Date }  ,
   verified: { type: Boolean, default: false },
 verificationCode: { type: String },
-episodesWatched: [{ type: Number }] // Add this to userSchema
-
-
+episodesWatched: {
+  type: [Number],
+  default: []
+}
            // OTP expiry time
 });
 
@@ -382,6 +383,7 @@ app.post("/save-progress", authenticate, async (req, res) => {
 
 app.get("/get-progress", authenticate, async (req, res) => {
   const email = req.user.email;
+  console.log("Getting progress for:", email);  // ✅ Check if correct
 
   try {
     const user = await User.findOne({ email });
